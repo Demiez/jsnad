@@ -105,5 +105,4 @@ dist
 
 # Additional
 dist
-.stryker-tmp
 reports

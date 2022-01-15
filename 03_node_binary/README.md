@@ -34,4 +34,4 @@ Commands:
 
 - `node --stack-trace-limit=1000 stack.js`
 - `node --stack-size=1024 stack.js`
-- `node --v8-options | grep -B0 -A1 stack` (see all stack options) /
+- `node --v8-options | grep -B0 -A1 stack` (see all stack options)

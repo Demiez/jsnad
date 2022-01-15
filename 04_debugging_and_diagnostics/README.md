@@ -9,6 +9,7 @@ To debug in Chrome browser tab's address bar shoudl be set to `chrome://inspect`
 ### Used command line flags:
 
 - `--inspect` or `--inspect-brk` (cause the process to start with an active breakpoint)
+- `--inspect-brk` - breaks on the first line of execution
 
 ### debugger statement
 

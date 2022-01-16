@@ -17,6 +17,7 @@
 - `node -e "fs.rmdirSync('node_modules', {recursive: true})"` - DEPRECATED : remove node_modules folder
 - `node -e "fs.rmSync('node_modules', {recursive: true})"` - remove node_modules folder
 - `npm run lint -- --fix` - add flag fix to executed script
+- `npm i --save-exact` or `npm i -E` - install exact version
 
 ### Package script namespaces
 
@@ -34,7 +35,9 @@ insert hard-to-see/type characters using \ notation:
 
 ### Semver format
 
-Info on ['Semver website'](https://semver.org/)
-Complete syntax ['syntax](https://docs.npmjs.com/cli/v6/using-npm/semver)
+Info on ['Semver website'](https://semver.org/)<br>
+Complete syntax ['syntax'](https://docs.npmjs.com/cli/v6/using-npm/semver)<br>
+Semver calculator ['calculator'](https://semver.npmjs.com/)
 
-- using a caret (`^`) on version numbers is basically the same as using an x in the MINOR and PATCH positions, so ^6.2.1 is the same as 6.x.x.
+- using a caret (`^`) means all up to major version, is basically the same as using an x in the MINOR and PATCH positions, so ^6.2.1 is the same as 6.x.x.
+- using a tilde (`~`) means all up to minor version, is basically the same as using an x in the MINOR and PATCH positions, so ~6.2.1 is the same as 6.2.x.

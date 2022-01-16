@@ -17,3 +17,9 @@ Commands to check property descriptor:
 
 - `node -p "Object.getOwnPropertyDescriptor(process, 'title')"`
 - `node -p "Object.getOwnPropertyDescriptor(global, 'process')"`
+
+### Class-syntax
+
+Modern JavaScript (EcmaScript 2015) has a class keyword. It's important that this isn't confused with the class keyword in other Classical OOP languages.<br>
+
+The class keyword is syntactic sugar that actually creates a function. Specifically it creates a function that should be called with new. It creates a Constructor Function.

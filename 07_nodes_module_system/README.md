@@ -4,7 +4,7 @@
 
 - `node -e "require('./index.js')"` - befaves the same like simple node call
 
-### Main module:
+### Detecting main module:
 
 When a file is the entry point of a program, it's the main module. We can detect whether a particular file is the main module in two ways.<br>
 

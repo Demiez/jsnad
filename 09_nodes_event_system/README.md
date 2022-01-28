@@ -9,3 +9,11 @@ All `EventEmitters` emit the event `newListener` when new listeners are added an
 ### official doc for EventEmitter
 
 [official doc](https://nodejs.org/dist/latest-v16.x/docs/api/events.html#class-eventemitter)
+
+### main methods
+
+- `on` or `addListener` - adds listner
+- `prependListner` - injects listner to the top position
+- `once` - remove listner after it has been called
+- `removeListener` - removes listner with specified callback
+- `removeAllListeners` - removes all listners without the need to specify function

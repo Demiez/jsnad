@@ -21,3 +21,7 @@ Error is the native constructor for generating an error object. To create an err
 - URIError - that occurs when encodeURI() or decodeURI() are passed invalid parameters
 
 [Error MDN doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
+
+### Node error codes
+
+[Node error codes](https://nodejs.org/api/errors.html#errors_node_js_error_codes)

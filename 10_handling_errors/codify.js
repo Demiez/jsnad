@@ -1,3 +1,4 @@
+// adds error code to the error
 function codify(err, code) {
   err.code = code;
   return err;

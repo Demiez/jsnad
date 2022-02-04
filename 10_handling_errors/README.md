@@ -25,3 +25,8 @@ Error is the native constructor for generating an error object. To create an err
 ### Node error codes
 
 [Node error codes](https://nodejs.org/api/errors.html#errors_node_js_error_codes)
+
+### Exception vs rejection
+
+- Exception is a synchronous error
+- Rejection is an asynchronous error

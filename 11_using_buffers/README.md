@@ -14,4 +14,6 @@ Buffer object is both an instance of `Buffer` and an instance (at the second deg
 
 ### Allocating - creating instance of Buffer
 
-Correct way to allocate a buffer of a certain amount of bytes is to use Buffer.alloc(amount_of_bytes). Never use new keyword
+Correct way to allocate a buffer of a certain amount of bytes is to use Buffer.alloc(amount_of_bytes). Never use new keyword (`new Buffer` was deprecated because it had allocUnsafe behavior)
+- `Buffer.alloc()` - Allocates a new Buffer of size bytes. If fill is undefined, the Buffer will be zero-filled.
+- `Buffer.allocUnsafe()` - unsafe, always returns a different buffer of garbage bytes

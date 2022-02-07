@@ -2,8 +2,14 @@
 const assert = require('assert');
 
 function parseUrl(str) {
-  const parsed = new URL(str);
-  return parsed;
+  try {
+    const parsed = new URL(str);
+    return parsed;
+  } catch (error) {
+    if (error.code === 'ERR_INVALID_URL') {
+      return null;
+    }
+  }
 }
 
 assert.doesNotThrow(() => {

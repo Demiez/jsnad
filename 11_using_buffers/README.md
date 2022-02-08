@@ -24,3 +24,9 @@ Correct way to allocate a buffer of a certain amount of bytes is to use Buffer.a
 - `buffer.toString(), buffer.toString('base64')` - converts buffer to string, can also accept encoding as an argument
 
 There is also built-in Node core module `string_decoder`, which can be used in cases, when multiple buffers might split characters across a byte boundary (for example, UTF8 encoding format has between 1 and 4 bytes to represent each character)
+
+### JSON
+
+`toJSON()` method of `Buffer` instance returns a plain JavaScript object in order to represent the buffer in a JSON-friendly way. When `JSON.stringify()` is used, it attempts to call `toJSON()` method, if any exists at the object passed.<br>
+
+Parsed data from `JSON.parse()` onlys turn that JSON representation of the buffer into a plain JavaScript object, and then the data array from parsed json should be used passed at `Buffer.from()` as an argument. When an array of numbers is passed to `Buffer.from()` they are converted to a buffer with byte values corresponding to those numbers!

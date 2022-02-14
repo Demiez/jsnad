@@ -40,3 +40,13 @@ The `main events` emitted by various `Stream` implementations that one may commo
 - Object streams - in object mode streams can read or write JavaScript objects and all primitives (strings, numbers) except null
 
 Mode of a stream is determined by its `objectMode` option passed when the stream is instantiated! Default value is `false` which means default mode is binary.
+
+### Readable Stream
+The `Readable` constructor creates readable streams. A readable stream is used to read a file, read data from an incoming HTTP request, or read user input from a command prompt to name a few examples. The Readable constructor inherits from the `Stream` constructor which inherits from the `EventEmitter` constructor, so readable streams are event emitters. As data becomes available, a readable stream emits a `data` event.<br>
+
+`Readable Stream` instantiates with an instance of the `Readable` constructor and then causes it to emit data events for each chunk of the file that has been read.<br>
+
+`Readable streams` have a default highWaterMark option of `16kb`, so `64kb` file would emit four data events.
+
+`Readable.from()` - the data events will receive the data as strings because `Readable.from` utility function sets `objectMode` to true by default
+

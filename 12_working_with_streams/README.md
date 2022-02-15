@@ -75,3 +75,16 @@ The `Duplex` stream constructor's prototype inherits from the `Readable` constru
 The `Transform` constructor inherits from the `Duplex` constructor. Transform streams are duplex streams that have an additional constraint applied to enforce a causal relationship between the read and write interfaces. A good example is compression like zlib (`const { createGzip } = require('zlib')`). <br>
 
 The `PassThrough` constructor inherits from the `Transform` constructor. Tt's a useful placeholder when a transform stream is expected but no transform is desired (check lab 2)
+
+###  End-of-stream
+
+There are four ways for a stream to potentially become inoperative:
+
+- close event
+- error event
+- finish event
+- end event
+
+We need to know when a stream has closed so that resources can be deallocated, otherwise memory leaks become possible. <br>
+
+`stream.finished` utility function (`const { finished } = require('stream')`) allows to avoid listening on 4 different events. It accepts `stream` parameter of types: `NodeJS.ReadableStream` | `NodeJS.WritableStream` | `NodeJS.ReadWriteStream` and a callback for error handling <br>

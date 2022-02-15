@@ -73,3 +73,5 @@ The `chunk` argument must be of type string or an instance of `Buffer` or `Uint8
 The `Duplex` stream constructor's prototype inherits from the `Readable` constructor but it also mixes in functionality from the `Writable` constructor. A TCP network socket is a great example of a Duplex stream. With a `Duplex` stream, both `read()` and `write()` methods are implemented but there doesn't have to be a causal relationship between them.<br>
 
 The `Transform` constructor inherits from the `Duplex` constructor. Transform streams are duplex streams that have an additional constraint applied to enforce a causal relationship between the read and write interfaces. A good example is compression like zlib (`const { createGzip } = require('zlib')`). <br>
+
+The `PassThrough` constructor inherits from the `Transform` constructor. Tt's a useful placeholder when a transform stream is expected but no transform is desired (check lab 2)

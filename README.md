@@ -7,8 +7,6 @@ Prepare myself to JSNAD certification, cover all the required materials and pass
 ## Topics
 
 - 02 Setting up
-  - Node version managers (nvm, nvs)
-  - Node and npm version checks (-v flag)
 - 03 The node binary
 - 04 Debugging and diagnostics
 - 05 Key javascript concepts
@@ -22,3 +20,6 @@ Prepare myself to JSNAD certification, cover all the required materials and pass
 - 13 Process and operating system
 - 14 Creating child processes
 - 15 Writing unit-tests
+
+## Dive deeper
+- compression and decompression with zlib

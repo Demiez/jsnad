@@ -43,7 +43,7 @@ Mode of a stream is determined by its `objectMode` option passed when the stream
 
 ### Readable Stream
 
-The `Readable` constructor creates readable streams (call `fs.createReadStream()`). A readable stream is used to read a file, read data from an incoming HTTP request, or read user input from a command prompt to name a few examples. The Readable constructor inherits from the `Stream` constructor which inherits from the `EventEmitter` constructor, so readable streams are event emitters. As data becomes available, a readable stream emits a `data` event.<br>
+The `Readable` constructor creates readable streams (call `fs.createReadStream()` returns type `fs.ReadStream`). A readable stream (also `const { Readable } = require('stream')`) is used to read a file, read data from an incoming HTTP request, or read user input from a command prompt to name a few examples. The Readable constructor inherits from the `Stream` constructor which inherits from the `EventEmitter` constructor, so readable streams are event emitters. As data becomes available, a readable stream emits a `data` event.<br>
 
 `Readable Stream` instantiates with an instance of the `Readable` constructor and then causes it to emit data events for each chunk of the file that has been read.<br>
 
@@ -53,7 +53,7 @@ The `Readable` constructor creates readable streams (call `fs.createReadStream()
 
 ### Writable Stream
 
-`Writable` constructor creates writable streams (call `fs.createWriteStream()`). A writable stream could be used to write a file, write data to an HTTP response, or write to the terminal. The `Writable` constructor also inherits from the Stream constructor which inherits from the EventEmitter constructor, so writable streams are event emitters.<br>
+`Writable` constructor creates writable streams (call `fs.createWriteStream()`). A writable stream (also `const { Writable } = require('stream')`) could be used to write a file, write data to an HTTP response, or write to the terminal. The `Writable` constructor also inherits from the Stream constructor which inherits from the EventEmitter constructor, so writable streams are event emitters.<br>
 
 To create a writable stream, we call the `Writable` constructor with the new keyword. `write()` method of `Writable` is called with params `chunk`, `enc`, and `next`. The `chunk` is each piece of data written to the stream, `enc` is encoding and `next` is callback which must be called to indicate that we are ready for the next piece of data.
 The point of a next callback function is to allow for asynchronous operations within the write option function, this is essential for performing asynchronous I/O.<br>
@@ -62,5 +62,13 @@ The point of a next callback function is to allow for asynchronous operations wi
 
 The `chunk` argument must be of type string or an instance of `Buffer` or `Uint8Array`, else passing anything to `write()` will cause an error
 
+### Readable and Writable 
 
+3 core stream constructors that have both readable and writable interfaces:
+
+- Duplex
+- Transform
+- PassThrough
+
+The `Duplex` stream constructor's prototype inherits from the `Readable` constructor but it also mixes in functionality from the `Writable` constructor. A TCP network socket is a great example of a Duplex stream. With a `Duplex` stream, both `read()` and `write()` methods are implemented but there doesn't have to be a causal relationship between them.<br>
 

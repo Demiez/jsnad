@@ -95,6 +95,9 @@ Pipe is a channel, which connects readable stream with writable stream and allow
 
 Internally, the pipe method sets up a data listener on the readable stream and automatically writes to the writable stream as data becomes available.<br>
 
-NOT RECOMMENDED to chain pipe calls together: `streamA.pipe(streamB).pipe(streamC)`. If a stream for example fails or closes for any reason in the middle, the other streams in the pipeline will not automatically close. This can create severe memory leaks and other bugs! `stream.pipeline` utility function MUST be used instead!
+NOT RECOMMENDED to chain pipe calls together: `streamA.pipe(streamB).pipe(streamC)`. If a stream for example fails or closes for any reason in the middle, the other streams in the pipeline will not automatically close. This can create severe memory leaks and other bugs! `stream.pipeline` (`const { pipeline } = require('stream')`) utility function MUST be used instead! <br>
+
+The `pipeline` command will call pipe on every stream passed to it, and will allow a function to be passed as the final function. Note how we removed the finished utility method. This is because the final function passed to the pipeline function will be called if any of the streams in the pipeline close or fail for any reason.
+
 
 

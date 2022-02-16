@@ -88,3 +88,13 @@ There are four ways for a stream to potentially become inoperative:
 We need to know when a stream has closed so that resources can be deallocated, otherwise memory leaks become possible. <br>
 
 `stream.finished` utility function (`const { finished } = require('stream')`) allows to avoid listening on 4 different events. It accepts `stream` parameter of types: `NodeJS.ReadableStream` | `NodeJS.WritableStream` | `NodeJS.ReadWriteStream` and a callback for error handling <br>
+
+### Piping Streams
+
+Pipe is a channel, which connects readable stream with writable stream and allows at once to read from readable into writable stream.<br>
+
+Internally, the pipe method sets up a data listener on the readable stream and automatically writes to the writable stream as data becomes available.<br>
+
+NOT RECOMMENDED to chain pipe calls together: `streamA.pipe(streamB).pipe(streamC)`. If a stream for example fails or closes for any reason in the middle, the other streams in the pipeline will not automatically close. This can create severe memory leaks and other bugs! `stream.pipeline` utility function MUST be used instead!
+
+

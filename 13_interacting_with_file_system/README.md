@@ -4,7 +4,7 @@
 
 The `__filename` variable holds the absolute path to the currently executing file, and the `__dirname` variable holds the absolute path to the directory that the currently executing file is in.
 
-### Path
+### Path module
 
 The `path` module is important for path manipulation and normalization across platforms.<br>
 
@@ -26,3 +26,15 @@ Path deconstructors are:
 
 [Node Path Docs](https://nodejs.org/dist/latest-v16.x/docs/api/path.html)
 
+### Fs module
+
+The `fs` module has lower level and higher level APIs. The lower level API's closely mirror POSIX system calls. For instance, `fs.open` opens and possibly creates a file and provides a file descriptor handle, taking same options as the POSIX open command.<br>
+
+Higher level API's of `fs` module are built on top of lower level APIs.
+
+The higher level methods of `fs` module for reading and writing are provided in four abstraction types:
+
+- Synchronous - methods end with Sync (`fs.readFileSync()`)
+- Callback based
+- Promise based
+- Stream based

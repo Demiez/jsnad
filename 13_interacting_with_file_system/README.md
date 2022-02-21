@@ -51,3 +51,14 @@ Async flow is reached via callbacks or promises. `const { readFile, writeFile } 
 The `fs` module has `fs.createReadStream()` and `fs.createWriteStream()` methods (`const { createReadStream, createWriteStream } = require('fs')`) which allow us to read and write files in chunks. `Streams` are ideal when handling very large files that can be processed incrementally.<br>
 
 The pattern with `pipeline` is excellent if dealing with a large file because the memory usage will stay constant as the file is read in small chunks and written in small chunks (check `pipeline-base.js`).
+
+### Reading Dirs
+
+Directories are a special type of file, which hold a catalog of files. Similar to files the fs module provides multiple ways to read a directory:
+
+- Synchronous
+- Callback-based
+- Promise-based
+- An async iterable that inherits from [fs.Dir](https://nodejs.org/dist/latest-v16.x/docs/api/fs.html#class-fsdir)
+
+`fs.Dir` class represents a directory stream, which is created by `fs.opendir()`, `fs.opendirSync()`, or `fsPromises.opendir()`.

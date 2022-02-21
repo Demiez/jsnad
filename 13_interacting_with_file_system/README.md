@@ -41,3 +41,7 @@ The higher level methods of `fs` module for reading and writing are provided in 
 
 ### generating permisions
 `fs.chmodSync()` - allows to generate access permissions to the file [fs.chmodSync doc permission numbers](https://nodejs.org/dist/latest-v16.x/docs/api/fs.html#fs_fs_fchmodsync_fd_mode)
+
+### Fs async operations
+
+Async flow is reached via callbacks or promises. `const { readFile, writeFile } = require('fs').promises` is backwards compatible with Node v10-v12, in other cases `const { readFile, writeFile } =  require('fs/promises')` can be used.

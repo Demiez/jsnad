@@ -16,10 +16,11 @@ Prepare myself to JSNAD certification, cover all the required materials and pass
 - 09 Node's event system
 - 10 Handling errors
 - 11 Using buffers
-- 12 Interacting with file system
-- 13 Process and operating system
-- 14 Creating child processes
-- 15 Writing unit-tests
+- 12 Working with streams
+- 13 Interacting with file system
+- 14 Process and operating system
+- 15 Creating child processes
+- 16 Writing unit-tests
 
 ## Dive deeper
 - compression and decompression with zlib

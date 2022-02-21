@@ -1,8 +1,7 @@
 'use strict';
-const { pipeline } = require('stream');
+const { pipeline, Transform } = require('stream');
 const { join } = require('path');
 const { createReadStream, createWriteStream } = require('fs');
-const { Transform } = require('stream');
 
 const createUppercaseStream = () => {
   return new Transform({

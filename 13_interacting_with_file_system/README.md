@@ -45,3 +45,9 @@ The higher level methods of `fs` module for reading and writing are provided in 
 ### Fs async operations
 
 Async flow is reached via callbacks or promises. `const { readFile, writeFile } = require('fs').promises` is backwards compatible with Node v10-v12, in other cases `const { readFile, writeFile } =  require('fs/promises')` can be used.
+
+### File streams
+
+The `fs` module has `fs.createReadStream()` and `fs.createWriteStream()` methods which allow us to read and write files in chunks. `Streams` are ideal when handling very large files that can be processed incrementally.<br>
+
+The pattern with `pipeline` is excellent if dealing with a large file because the memory usage will stay constant as the file is read in small chunks and written in small chunks (check `pipeline-base.js`).

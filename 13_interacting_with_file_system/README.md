@@ -38,3 +38,6 @@ The higher level methods of `fs` module for reading and writing are provided in 
 - Callback based
 - Promise based
 - Stream based
+
+### generating permisions
+`fs.chmodSync()` - allows to generate access permissions to the file [fs.chmodSync doc permission numbers](https://nodejs.org/dist/latest-v16.x/docs/api/fs.html#fs_fs_fchmodsync_fd_mode)

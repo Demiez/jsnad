@@ -78,3 +78,7 @@ There are four time stats(type of `Date`) available for files:
 - Change time (property `ctime` of `fs.Stats` object)
 - Modified time (property `mtime` of `fs.Stats` object)
 - Birth time (property `birthtime` of `fs.Stats` object)
+
+### Watching
+
+The `fs.watch()` method is provided by Node core to tap into file system events. [Chokidar lib](https://www.npmjs.com/package/chokidar) is a good and more informative alternative.

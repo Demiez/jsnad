@@ -62,3 +62,19 @@ Directories are a special type of file, which hold a catalog of files. Similar t
 - An async iterable that inherits from [fs.Dir](https://nodejs.org/dist/latest-v16.x/docs/api/fs.html#class-fsdir)
 
 `fs.Dir` class represents a directory stream, which is created by `fs.opendir()`, `fs.opendirSync()`, or `fsPromises.opendir()`.
+
+### File metadata
+
+Metadata about files can be obtained with the following methods:
+
+- `fs.stat()`, `fs.statSync()`, `fs.promises.stat()` -  `stat()` follows symbolic links
+- `fs.lstat()`, `fs.lstatSync()`, `fs.promises.lstat()` - `lstat()` gets meta data for symbolic links instead of following them
+
+`fs.Stats` - instance of this class is returned both by `stat()` and `lstat()` methods and <fs.Stats> object provides information about a file.
+
+There are four time stats(type of `Date`) available for files:
+
+- Access time (property `atime` of `fs.Stats` object)
+- Change time (property `ctime` of `fs.Stats` object)
+- Modified time (property `mtime` of `fs.Stats` object)
+- Birth time (property `birthtime` of `fs.Stats` object)

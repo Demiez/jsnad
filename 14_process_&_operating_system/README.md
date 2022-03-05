@@ -26,3 +26,15 @@ Active handles are present in some API. An `active handle` is a reference that k
 #### exit event
 
 The `exit` event can also used to detect when a process is closing and perform any final actions, but no asynchronous work can be done in the event handler function because the process is exiting.
+
+### Process info
+
+Main thing to check are:
+- The current working directory of the process (`process.cwd()`)
+- The platform on which the process is running (`process.platform`)
+- The Process ID (`process.pid`)
+- The environment variables that apply to the process (`process.env`)
+
+Environment variables are key value pairs, when `process.env` is accessed, the host environment is dynamically queried and an object is built out of the key value pairs. This means `process.env` works more like a function, it's a getter. When used to set environment variables, for instance `process.env.FOO='my env var'` the environment variable is set for the process only, it does not leak into the host operating system.<br>
+
+`process.env.PWD` also contains the current working directory when the process executes. But if the process changes its directory with `process.chdir()`, `process.cwd()` will return the new directory whereas `process.env.PWD` continues to store the directory that process was initially executed from.

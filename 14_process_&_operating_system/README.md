@@ -48,3 +48,19 @@ Environment variables are key value pairs, when `process.env` is accessed, the h
 - `process.uptime()` - amount of seconds (with 9 or 7 decimal places - depends on node version) that the process has been executing for
 - `process.cpuUsage()` - returns an object with two properties: `user` and `system`. The `user` property represents time that the Node process spent using the CPU. The `system` property represents time that the kernel spent using the CPU due to activity triggered by the process. Both properties contain microsecond (one millionth of a second) measurements
 - `process.memoryUsage()` - return `MemoryUsage` object with keys(`rss`, `heapTotal`, `heapUsed` and `external`). All numbers are in bytes
+
+### Operating system (module os)
+
+Main methods are:
+
+- `os.hostname()`
+- `os.homedir()`
+- `os.tmpdir()` - location of Operating System temporary directory. The temporary folder is routinely cleared by the Operating System so it's a great place to store throwaway files without the need to remove them later
+- `os.platform()` - equal to `process.platform`
+- `os.type()` - uses `uname` command on non-windows systems and `ver` on windows system
+
+### OS stats
+
+- `os.uptime()` - amount of time the system has been running in seconds
+- `os.freemem()` - available system memory in bytes
+- `os.totalmem()` - total system memory in bytes

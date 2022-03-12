@@ -34,3 +34,9 @@ While `exec` accepts a callback, `spawn` does not. Both `exec` and `spawn` retur
 There is one highly important difference between `spawn` and the other three methods (namely `exec`, `execSync` and `spawnSync`): the `spawn` method is the only method of the four that DOESN'T BUFFER CHILD PROCESS OUTPUT!<br>
 
 Since the spawn method does not buffer at all, it will continue to stream output for the entire lifetime of the subprocess, no matter how much output it generates. Therefore, for long running child processes it's recommended to use the spawn method.
+
+### Process configuration
+
+An options object can be passed as a third argument in the case of `spawn` and `spawnSync` or the second argument in the case of `exec` and `execSync`.<br>
+
+Two standard options that can be passed which control the environment of the child process: `cwd` and `env`. By default, the child process inherits the environment variables of the parent process.<br>

@@ -1,5 +1,7 @@
 # PROCESS & OPERATING SYSTEM
 
+The process object provides information about, and control over, the current Node.js process. While it is available as a global, in newer versions of node it is recommended to explicitly access it via require or import: `import process from 'process';`
+
 ### STDIO (standard input/output)
 
 The `process` object exposes three streams:
@@ -20,6 +22,7 @@ The `process` object exposes three streams:
 Active handles are present in some API. An `active handle` is a reference that keeps the process open. For instance, `net.createServer` creates a server with an active handle which will stop the process from exiting by itself so that it can wait for incoming requests. Timeouts and intervals also have active handles that keep the process from exiting.
 
 #### exit codes (can be verified by `echo $?`):
+
 - 0 - exit code of 0 means the process executed successfully
 - 1 - exit code of 1 means general failure
 
@@ -30,6 +33,7 @@ The `exit` event can also used to detect when a process is closing and perform a
 ### Process info
 
 Main thing to check are:
+
 - The current working directory of the process (`process.cwd()`)
 - The platform on which the process is running (`process.platform`)
 - The Process ID (`process.pid`)

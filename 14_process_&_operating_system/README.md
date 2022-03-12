@@ -38,6 +38,7 @@ Main thing to check are:
 - The platform on which the process is running (`process.platform`)
 - The Process ID (`process.pid`)
 - The environment variables that apply to the process (`process.env`)
+- Full path of the node binary of the currently executing Node process(`process.execPath`)
 
 Environment variables are key value pairs, when `process.env` is accessed, the host environment is dynamically queried and an object is built out of the key value pairs. This means `process.env` works more like a function, it's a getter. When used to set environment variables, for instance `process.env.FOO='my env var'` the environment variable is set for the process only, it does not leak into the host operating system.<br>
 

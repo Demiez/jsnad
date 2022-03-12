@@ -40,3 +40,9 @@ Since the spawn method does not buffer at all, it will continue to stream output
 An options object can be passed as a third argument in the case of `spawn` and `spawnSync` or the second argument in the case of `exec` and `execSync`.<br>
 
 Two standard options that can be passed which control the environment of the child process: `cwd` and `env`. By default, the child process inherits the environment variables of the parent process.<br>
+
+### Child STDIO
+
+`stdio` array indices (`stdio: ['pipe', 'pipe', 'pipe']`) correspond to the file descriptors of each STDIO device. So the first element in the stdio array (index 0) is the setting for the child process `STDIN`, the second element (index 1) is for `STDOUT` and the third (index 2) is for `STDERR`.<br>
+
+[STDIO Doc](https://nodejs.org/dist/latest-v16.x/docs/api/child_process.html#child_process_options_stdio)

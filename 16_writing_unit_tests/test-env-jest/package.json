@@ -1,0 +1,22 @@
+{
+  "name": "test-env-jest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "add.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "test-add": "jest --coverage test/add.test.js",
+    "test-req": "jest test/req.test.js",
+    "test-req-prom": "jest test/req-prom.test.js",
+    "test-all": "jest test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}

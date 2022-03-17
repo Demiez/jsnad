@@ -40,7 +40,7 @@ describe('Calls cb with error for not Buffer data', function () {
 });
 
 describe('Correctly processes data with cb and timeout', function () {
-  it('should return uppercased id with expected length', () => {
+  it('should return obj with id of type string with expected length', () => {
     const cb = (err, obj) => {
       expect(err).toBe(null);
       expect(obj).toHaveProperty('id');

@@ -1,0 +1,23 @@
+{
+  "name": "esm-modules",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "import-meta-resolve": "^1.1.1",
+    "pino": "^7.9.2",
+    "tap": "^16.0.1"
+  },
+  "devDependencies": {
+    "standard": "^16.0.4"
+  }
+}

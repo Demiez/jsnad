@@ -58,11 +58,11 @@ The `Readable` constructor creates readable streams (call `fs.createReadStream()
 To create a writable stream, we call the `Writable` constructor with the new keyword. `write()` method of `Writable` is called with params `chunk`, `enc`, and `next`. The `chunk` is each piece of data written to the stream, `enc` is encoding and `next` is callback which must be called to indicate that we are ready for the next piece of data.
 The point of a next callback function is to allow for asynchronous operations within the write option function, this is essential for performing asynchronous I/O.<br>
 
-`decodeStrings` option of `Writable` instance can be set to `true`, so it disables convertion to `Buffer`<br>
+`decodeStrings` option of `Writable` instance can be set to `false`, so it disables convertion to `Buffer`<br>
 
 The `chunk` argument must be of type string or an instance of `Buffer` or `Uint8Array`, else passing anything to `write()` will cause an error
 
-### Readable and Writable 
+### Readable and Writable
 
 3 core stream constructors that have both readable and writable interfaces:
 
@@ -76,7 +76,7 @@ The `Transform` constructor inherits from the `Duplex` constructor. Transform st
 
 The `PassThrough` constructor inherits from the `Transform` constructor. Tt's a useful placeholder when a transform stream is expected but no transform is desired (check lab 2)
 
-###  End-of-stream
+### End-of-stream
 
 There are four ways for a stream to potentially become inoperative:
 
@@ -98,6 +98,3 @@ Internally, the pipe method sets up a data listener on the readable stream and a
 NOT RECOMMENDED to chain pipe calls together: `streamA.pipe(streamB).pipe(streamC)`. If a stream for example fails or closes for any reason in the middle, the other streams in the pipeline will not automatically close. This can create severe memory leaks and other bugs! `stream.pipeline` (`const { pipeline } = require('stream')`) utility function MUST be used instead! <br>
 
 The `pipeline` command will call pipe on every stream passed to it, and will allow a function to be passed as the final function. Note how we removed the finished utility method. This is because the final function passed to the pipeline function will be called if any of the streams in the pipeline close or fail for any reason.
-
-
-

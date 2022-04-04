@@ -1,6 +1,8 @@
 # PROCESS & OPERATING SYSTEM
 
-The process object provides information about, and control over, the current Node.js process. While it is available as a global, in newer versions of node it is recommended to explicitly access it via require or import: `import process from 'process';`
+The process object provides information about, and control over, the current Node.js process. While it is available as a global, in newer versions of node it is recommended to explicitly access it via require or import: `import process from 'process';`<br>
+
+The process object is an instance of `EventEmitter`.
 
 ### STDIO (standard input/output)
 

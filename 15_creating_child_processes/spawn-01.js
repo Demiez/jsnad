@@ -1,15 +1,15 @@
 'use strict';
 const { spawn } = require('child_process');
 
-const sp = spawn(process.execPath, [
+const subprocess = spawn(process.execPath, [
   `-e`,
   `console.log('subprocess stdio output')`,
 ]);
 
-console.log('pid is', sp.pid);
+console.log('pid is', subprocess.pid);
 
-sp.stdout.pipe(process.stdout); // To get the STDOUT of the child process we pipe sp.stdout to the parent process.stdout
-sp.on('close', (status) => {
+subprocess.stdout.pipe(process.stdout); // To get the STDOUT of the child process we pipe sp.stdout to the parent process.stdout
+subprocess.on('close', (status) => {
   console.log('exit status was', status); // displays 0
 });
 
